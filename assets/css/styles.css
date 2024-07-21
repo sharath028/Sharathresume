@@ -667,14 +667,6 @@ img {
   bottom: 3rem;
 }
 
-.centered-content {
-  position: absolute; /* Make the element positionable */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Offset by half its width and height */
-  text-align: center; /* Optionally, center the content within the element */
-}
-
 
 
 /*=============== BREAKPOINTS ===============*/
