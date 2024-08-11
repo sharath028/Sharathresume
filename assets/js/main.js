@@ -52,7 +52,7 @@ const sendEmail = (e) =>{
             // Remove message after five seconds
             setTimeout(() =>{
                 contactMessage.textContent =''
-            }, 500)
+            }, 1000)
 
             // Clear input fields
             contactForm.reset()
