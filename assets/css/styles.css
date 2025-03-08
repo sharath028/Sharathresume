@@ -270,7 +270,8 @@ img {
 }
 
 .home__name{
-  font-size: var(--biggest-font-size);
+  font-size: 80px;
+/*   font-size: var(--biggest-font-size); */
   font-weight: var(--font-bold);
   word-break: break-word;
   margin-bottom: 1rem;
