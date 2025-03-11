@@ -929,28 +929,6 @@ footer {
     color: #ecf0f1;
 }
 
-.footer-content {
-    text-align: center;
-    padding: 15px 0;
-}
-
-.visitor-counter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.copyright {
-    margin: 8px 0;
-    font-weight: 500;
-}
-
-.device-stats {
-    font-size: 0.9em;
-    color: #666;
-}
-
 
 
 
