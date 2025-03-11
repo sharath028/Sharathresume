@@ -95,7 +95,61 @@ const scrollActive = () =>{
 }
 window.addEventListener('scroll', scrollActive)
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if localStorage is available
+    function isLocalStorageAvailable() {
+        try {
+            localStorage.setItem('test', 'test');
+            localStorage.removeItem('test');
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+    
+    // Initialize counters
+    let desktopCount = 0;
+    let mobileCount = 0;
+    let totalCount = 0;
+    
+    // Load previous counts if available
+    if (isLocalStorageAvailable()) {
+        desktopCount = parseInt(localStorage.getItem('desktopCount') || 0);
+        mobileCount = parseInt(localStorage.getItem('mobileCount') || 0);
+        totalCount = parseInt(localStorage.getItem('totalCount') || 0);
+    }
+    
+    // Detect device type and increment appropriate counter
+    function incrementCounter() {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            mobileCount++;
+            localStorage.setItem('mobileCount', mobileCount);
+        } else {
+            desktopCount++;
+            localStorage.setItem('desktopCount', desktopCount);
+        }
+        
+        totalCount = desktopCount + mobileCount;
+        localStorage.setItem('totalCount', totalCount);
+        
+        updateDisplay();
+    }
+    
+    // Update the counter display
+    function updateDisplay() {
+        document.getElementById('desktopCount').textContent = desktopCount;
+        document.getElementById('mobileCount').textContent = mobileCount;
+        document.getElementById('totalCount').textContent = totalCount;
+    }
+    
+    // Initialize display
+    updateDisplay();
+    
+    // Increment counter on page load
+    incrementCounter();
+});
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
     origin:'top',
